@@ -13,10 +13,12 @@ public class BasicScoresTranslatorTest {
     static Stream<Arguments> basicScoresProvider() {
         return Stream.of(
                 arguments(0, 1, "love-fifteen"),
+                arguments(0, 3, "love-forty"),
                 arguments(1, 0, "fifteen-love"),
                 arguments(1, 2, "fifteen-thirty"),
                 arguments(2, 1, "thirty-fifteen"),
                 arguments(2, 3, "thirty-forty"),
+                arguments(2, 0, "thirty-love"),
                 arguments(3, 2, "forty-thirty")
         );
     }
