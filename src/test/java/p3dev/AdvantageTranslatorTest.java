@@ -10,14 +10,14 @@ import org.junit.jupiter.params.provider.Arguments;
 
 public class AdvantageTranslatorTest {
 
-    static Stream<Arguments> advantageAndVictoryProvider() {
+    static Stream<Arguments> advantageProvider() {
         return Stream.of(
                 arguments(4, 3, "Advantage Player 1"),
                 arguments(3, 4, "Advantage Player 2")
         );
     }
 
-    static Stream<Arguments> wrongAdvantageAndVictoryProvider() {
+    static Stream<Arguments> wrongAdvantageProvider() {
         return Stream.of(
                 arguments(0, 0),
                 arguments(1, 1),
@@ -38,8 +38,8 @@ public class AdvantageTranslatorTest {
     }
 
     @ParameterizedTest
-    @MethodSource("advantageAndVictoryProvider")
-    void should_return_correct_string_for_correct_advantage_and_victory_scores(int p1Points, int p2Points, String expected) {
+    @MethodSource("advantageProvider")
+    void should_return_correct_string_for_correct_advantage_scores(int p1Points, int p2Points, String expected) {
         // Arrange
         AdvantageTranslator translator = new AdvantageTranslator();
 
@@ -51,8 +51,8 @@ public class AdvantageTranslatorTest {
     }
 
     @ParameterizedTest
-    @MethodSource("wrongAdvantageAndVictoryProvider")
-    void should_throw_exception_for_incorrect_advantage_and_victory_scores(int p1Points, int p2Points) {
+    @MethodSource("wrongAdvantageProvider")
+    void should_throw_exception_for_incorrect_advantage_scores(int p1Points, int p2Points) {
         // Arrange
         AdvantageTranslator translator = new AdvantageTranslator();
 
