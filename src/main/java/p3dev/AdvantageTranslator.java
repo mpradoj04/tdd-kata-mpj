@@ -11,7 +11,7 @@ public class AdvantageTranslator implements IScoreTranslator{
 
     @Override
     public String translate(int scoreP1, int scoreP2) {
-        if (!applies(scoreP1, scoreP2)) throw new IllegalArgumentException("Numbers must a valid advantage or victory score score");
+        if (!applies(scoreP1, scoreP2)) throw new IllegalArgumentException("Numbers must a valid advantage score");
 
         int diff = scoreP1 - scoreP2;
 
